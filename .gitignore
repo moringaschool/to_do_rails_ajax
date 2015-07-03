@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore the simplecov coverage files generated on test runs
+coverage
