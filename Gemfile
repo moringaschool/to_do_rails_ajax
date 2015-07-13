@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'mailgun-ruby', require: 'mailgun'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
+gem 'chartkick'
 
 group :development do
   gem 'better_errors'

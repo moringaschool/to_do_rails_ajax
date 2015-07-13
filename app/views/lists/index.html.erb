@@ -9,3 +9,5 @@
 </ul>
 
 <%= link_to "Add list", new_list_path, :class=> "btn btn-default" %>
+
+<%= pie_chart Task.group(:list_id).count %>
