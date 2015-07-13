@@ -2,26 +2,26 @@
 
 <h1><%= @list.name %></h1>
 
-<% if @list.tasks.any? %>
-  <h4>Here are the tasks for this list:</h4>
+<h4>Here are the tasks for this list:</h4>
 
-  <ul>
+<ul id='list_tasks'>
+  <% if @list.tasks.any? %>
     <% @list.tasks.each do |task| %>
       <li>
         <%= task.description %> |
-        <%= link_to "Edit", edit_list_task_path(@list, task), :class => "btn btn-default" %> |
+        <%= link_to "Edit", edit_list_task_path(@list, task), id: "edit_task_btn",:class => "btn btn-default", remote: true %> |
         <%= link_to "Delete", list_task_path(@list, task),
                                  :data => {:confirm => "Are you sure?",
                                  :method => "delete"},
                                  :class => "btn btn-danger" %>
       </li>
     <% end %>
-  </ul>
 <% else %>
-  <p>There are no tasks yet!</p>
+  <p>None yet!</p>
 <% end %>
+</ul>
 
-<p><%= link_to "Add a task", new_list_task_path(@list), :class => "btn btn-default" %></p>
+<p><%= link_to "Add a task", new_list_task_path(@list), id: "new_task_link", class: "btn btn-default", remote: true %></p>
 <p><%= link_to "Delete List", list_path(@list),
                         :data => {:confirm => "Are you sure?",
                         :method => "delete"},

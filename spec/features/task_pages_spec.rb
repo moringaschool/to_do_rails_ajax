@@ -18,4 +18,14 @@ describe "the edit a task process" do
     click_on 'Update Task'
     expect(page).to have_content 'errors'
   end
+
+  it "should add a new task to the list using AJAX", js: true do
+    list = List.create(:name => 'Home stuff')
+    visit lists_path(list)
+    click_on "Home stuff"
+    click_on "Add a task"
+    fill_in "Description", :with => "New description for task"
+    click_button "Create Task"
+    page.should have_content("New description for task")
+  end
 end

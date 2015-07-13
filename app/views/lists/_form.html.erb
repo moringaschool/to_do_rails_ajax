@@ -1,5 +1,5 @@
 <%= render 'layouts/errors', :object => @list %>
-
+<div id="new_task_form">
 <%= form_for(@list) do |f| %>
   <div class="form-group">
     <%= f.label :name %>
@@ -7,3 +7,4 @@
   </div>
   <p><%= f.submit :class => "btn btn-primary" %></p>
 <% end %>
+</div>
