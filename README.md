@@ -1,4 +1,4 @@
-== To Do Application
+==To Do Application
 
 This application adds an example of AJAX to the To Do application built in Rails.  When a user presses the "Add a task" button, AJAX is used to show the form.  When the task is added, AJAX is used again to add the new task to the list and remove the form from view.
 
